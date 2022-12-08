@@ -18,38 +18,38 @@ spring:
     gateway:
       routes:
         - id: authentication-service
-          uri: http://localhost:8992/
+          uri: http://localhost:1992/
           predicates:
-            - Path=/api/v1/**
+            - Path=/api-docs
         - id: job-seeker-service
           uri: http://localhost:9091/
           predicates:
             - Path=/jobseeker/**
         - id: recruiter-service
-          uri: http://recruiter-service:8090/
+          uri: http://recruiter-service:8099/
           predicates:
             - Path=/fitmyjob/**
 
-        - id: jobsearch service
+        - id: job-search-service
           uri: http://localhost:8888/
           predicates:
             - Path=/jobs/**
 
-        - id: webservice
-          uri: http://localhost:8888/
+        - id: Job-Service
+          uri: http://localhost:9090/
           predicates:
-            - Path=/fitmyjob/**
+            - Path=/jobpost/**
 
         - id: feedback service
           uri: http://localhost:9095/
           predicates:
-            - Path=/fitmyjob/**
+            - Path=/feedback/**
 
-        - id: email service
+        - id: email-Service
           uri: http://localhost:8070/
           predicates:
-            - Path=/api/v1/**
-        - id: chat service
-          uri: http://localhost:9096/
+            - Path=/email/**
+        - id: chat-service
+          uri: http://localhost:8090/
           predicates:
-            - Path=/api/v1/**
+            - Path=/v1/api/**
